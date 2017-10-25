@@ -52,12 +52,6 @@ local.properties
 .scala_dependencies
 .worksheet
 
-### Eclipse Patch ###
-# Eclipse Core		
-.project
-
-# JDT-specific (Eclipse Java Development Tools)		
-.classpath
 
 ### macOS ###
 *.DS_Store
@@ -108,3 +102,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/macos,eclipse,windows
+/org.tec.datos1.graph.eclipse/
