@@ -6,7 +6,13 @@ import java.util.List;
 import org.eclipse.jdt.core.dom.*;
 
 public class Visitor extends ASTVisitor {
-	
+	/**
+	 * preVisit2 del ASTNode, si el nodo es una expresion necesaria se llama al visit de 
+	 * la expresion, si es algo que no se necesita se retorna true y se sigue revisando, 
+	 * si se encuentra algo necesario hace el print
+	 * @param node expresion del codigo
+	 * @return true si no lo necesita.
+	 */
 	@Override
 	public boolean preVisit2(ASTNode node) {
 		switch (node.getNodeType()) {
@@ -58,7 +64,11 @@ public class Visitor extends ASTVisitor {
 		
 	}
 		
-	
+	/**
+	 * metodo visit del ASTNode extrae unicamente los if del metodo
+	 * @param node Expresion de codigo
+	 * @return false
+	 */
 	public boolean visitIf(IfStatement node) {
 		System.out.println("if content: " + node.getExpression());
 		//System.out.println(getChildren(node));
@@ -66,7 +76,11 @@ public class Visitor extends ASTVisitor {
 		return false;
 	}
 	
-	
+	/**
+	 * metodo visit del ASTNode extrae unicamente los while del metodo
+	 * @param node Expresion de codigo
+	 * @return false
+	 */
 	public boolean visitWhile(WhileStatement node) {
 		System.out.println("while content: " + node.getExpression());
 		//System.out.println(getChildren(node).size());
@@ -74,7 +88,11 @@ public class Visitor extends ASTVisitor {
 		return false;
 	}
 	
-	
+	/**
+	 * metodo visit del ASTNode extrae unicamente los for del metodo
+	 * @param node Expresion de codigo
+	 * @return false
+	 */
 	public boolean visitFor(ForStatement node) {
 		System.out.println("For content: " + node.getExpression());
 		//node.getBody().accept(this);
@@ -98,6 +116,7 @@ public class Visitor extends ASTVisitor {
 
 	/**
 	 * Obtiene los hijos de cada nodo
+	 * @param nodo expresion de codigo
 	 */
 	public static List<ASTNode> getChildren(ASTNode node) {
 		List<ASTNode> children = new ArrayList<ASTNode>();

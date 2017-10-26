@@ -50,6 +50,11 @@ public class CasoHandler1 extends AbstractHandler {
         }
     }
 
+    /**
+     * Crea el AST del ICompilationUnits y obtiene todos los nombres de los metodos de clase
+     * @param mypackage
+     * @throws JavaModelException
+     */
     private void createAST(IPackageFragment mypackage)
             throws JavaModelException {
         for (ICompilationUnit unit : mypackage.getCompilationUnits()) {
