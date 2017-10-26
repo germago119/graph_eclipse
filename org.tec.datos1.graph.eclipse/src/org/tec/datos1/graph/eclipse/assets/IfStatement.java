@@ -17,7 +17,11 @@ public class IfStatement implements Widget {
 	Rectangle focus;
 	int[] shape;
 	
-	
+	/**
+	 * Constructor para el diagrama de un if
+	 * @param text Texto dentro del if
+	 * @param input Punto de inicio del if
+	 */
 	public IfStatement(String text, Point input) {
 		this.text = text;
 		this.input = input;
@@ -25,19 +29,33 @@ public class IfStatement implements Widget {
 		this.outputF = new Point(input.x + 30 + gc.stringExtent(text).x / 2, input.y + gc.stringExtent(text).y / 2 + 20);
 		shape = new int[] {input.x, input.y, outputF.x, outputF.y, input.x, input.y + gc.stringExtent(text).y + 40, outputT.x, outputT.y};
 	}
-	
+	/**
+	 * Constructor para el diagrama de un ActiveStatement
+	 * @param text Texto dentro del ActiveStatement
+	 * @param x Coordenada en x del punto de inicio del if
+	 * @param y Coordenada en y del punto de inicio del if
+	 */
 	public IfStatement(String text, int x, int y) {
 		this(text, new Point(x, y));
 	}
 	
-	public Point getInput() {
-		return input;
-	}
-	
+	/**
+	 * @return Punto de fin en caso de que sea "true" el if
+	 */
 	public Point getOutputT() {
 		return outputT;
 	}
 	
+	/**
+	 * @return Punto de inicio del if
+	 */
+	public Point getInput() {
+		return input;
+	}
+	
+	/**
+	 * @return Punto de fin en caso de que sea "false" el if
+	 */
 	public Point getOutputF() {
 		return outputF;
 	}

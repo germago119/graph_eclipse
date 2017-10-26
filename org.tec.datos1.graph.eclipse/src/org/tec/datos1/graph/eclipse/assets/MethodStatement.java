@@ -13,23 +13,41 @@ public class MethodStatement implements Widget {
 	Point output;
 	Rectangle focus;
 	
+	/**
+	 * Constructor para el diagrama de un metodo
+	 * @param text Texto dentro del metodo
+	 * @param input Punto de inicio del metodo
+	 */
 	public MethodStatement(String text, Point input) {
 		this.text = text;
 		this.input = input;
 		this.output = new Point(input.x, input.y + 40);
 	}
 	
+	/**
+	 * Constructor para el diagrama de un metodo
+	 * @param text Texto dentro del metodo
+	 * @param x Coordenada en x del punto de inicio del metodo
+	 * @param y Coordenada en y del punto de inicio del metodo
+	 */
 	public MethodStatement(String text, int x, int y) {
 		this(text, new Point(x, y));
 	}
 	
+	/**
+	 * @return Punto de inicio del metodo
+	 */
+	public Point getInput() {
+		return input;
+	}
+	
+	/**
+	 * @return Punto de fin del metodo
+	 */
 	public Point getOutput() {
 		return output;
 	}
 	
-	public Point getInput() {
-		return input;
-	}
 	public void end() {
 		this.focus = null;
 	}
