@@ -3,7 +3,7 @@ package org.tec.datos1.graph.eclipse.assets;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Point;
 
-public class Line {
+public class Line implements Illustrator {
 	Point first;
 	Point last;
 	
@@ -11,8 +11,9 @@ public class Line {
 		this.first = first;
 		this.last = last;
 	}
-	//todo While
-	public void draw(GC gc) {
+	
+	
+	public void sketch(GC gc) {
 		if(last.y < first.y) {
 			gc.drawLine(first.x, first.y, first.x, first.y + 10);
 			gc.drawLine(first.x, first.y + 10, 20, first.y + 10);

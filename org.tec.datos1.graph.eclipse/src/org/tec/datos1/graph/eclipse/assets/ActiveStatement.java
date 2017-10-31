@@ -8,7 +8,7 @@ import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.Display;
 
 
-public class ActiveStatement implements Widget {
+public class ActiveStatement implements Illustrator {
 		
 	String text;
 	Point input;

@@ -7,7 +7,7 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.Display;
 
-public class MethodStatement implements Widget {
+public class MethodStatement implements Illustrator {
 	String text;
 	Point input;
 	Point output;

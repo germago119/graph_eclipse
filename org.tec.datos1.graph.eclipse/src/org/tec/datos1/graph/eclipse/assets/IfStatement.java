@@ -7,7 +7,7 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.Display;
 
-public class IfStatement implements Widget {
+public class IfStatement implements Illustrator {
 	
 	String text;
 	Point input;
